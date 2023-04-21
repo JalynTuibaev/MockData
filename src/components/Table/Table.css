@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th {
+  background-color: darkblue;
+	color:#ffffff;
+  font-weight: bold;
+}
+
+.table__input {
+  max-width: 70px;
+  min-width: 0;
+}
+
+
+
+@media(max-width: 500px){
+  .container {
+    overflow-x: hidden;
+  }
+
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: left;
+		text-align: left;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
