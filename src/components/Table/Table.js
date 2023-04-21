@@ -106,15 +106,15 @@ const Table = ({perPage}) => {
                   />
                 </td>
               ))}
-              <td>{horizontalSum[index]}</td>
+              <td>$ {horizontalSum[index]}</td>
             </tr>
           ))}
           <tr>
             <td>Total</td>
             {verticalSum.map((sum, index) => (
-              <td key={index}>{sum}</td>
+              <td key={index}>$ {sum}</td>
             ))}
-            <td>{total}</td>
+            <td>$ {total}</td>
           </tr>
         </tbody>
       </table>
