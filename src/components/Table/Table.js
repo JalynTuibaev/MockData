@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import mockData from "../../data/mock_stores.json";
 import "./Table.css";
 
-const Table = () => {
+const Table = ({perPage}) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(perPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -106,7 +106,7 @@ const Table = () => {
                   />
                 </td>
               ))}
-              <td>{horizontalSum[item.store.id - 1]}</td>
+              <td>{horizontalSum[index]}</td>
             </tr>
           ))}
           <tr>

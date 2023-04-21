@@ -4,7 +4,7 @@ import Table from '../components/Table/Table';
 const Main = () => {
     return (
         <div>
-            <Table/>
+            <Table perPage={10}/>
         </div>
     );
 };
