@@ -4,26 +4,25 @@ import "./Table.css";
 
 const Table = ({perPage}) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(perPage);
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  const startIndex = (currentPage - 1) * perPage;
+  const endIndex = startIndex + perPage;
 
   const pageItems = mockData.slice(startIndex, endIndex);
 
   const pages = Array.from(
-    { length: Math.round(mockData.length / itemsPerPage) },
+    { length: Math.round(mockData.length / perPage) },
     (_, i) => i + 1
   );
 
   const [data, setData] = useState(pageItems);
 
   useEffect(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = (currentPage - 1) * perPage;
+    const endIndex = startIndex + perPage;
     const pageItems = mockData.slice(startIndex, endIndex);
     setData(pageItems);
-  }, [currentPage, itemsPerPage]);
+  }, [currentPage, perPage]);
 
   const monthsName = [
     "JAN",
